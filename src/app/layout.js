@@ -2,6 +2,7 @@
 import { ToastContainer } from "react-toastify";
 import "./globals.css";
 import "react-toastify/dist/ReactToastify.css";
+import AuthContextProvider from "@/context/AuthContext";
 
 export const metadata = {
   title: "Netflix",
@@ -11,10 +12,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        <AuthContextProvider>
      
       {children}
       <ToastContainer/>
-      
+      </AuthContextProvider>
       
       </body>
     </html>
