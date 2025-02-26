@@ -1,5 +1,6 @@
 "use client"
 
+import { useAuthContext } from "@/context/AuthContext";
 import { useState } from "react";
 
 
@@ -10,6 +11,7 @@ const[kayit,setKayit]=useState({
     email:"",
     password:""
 })
+const{createUser} =useAuthContext()
 
 const stateDoldur=(e)=>{
  setKayit({ ...kayit, [e.target.name]: e.target.value });
