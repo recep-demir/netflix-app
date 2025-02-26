@@ -35,7 +35,6 @@ const Login = () => {
                 Sign In
               </h2>
            
-           
               <div className="relative z-0 w-full mb-6 group">
                 <input
                   name="email"

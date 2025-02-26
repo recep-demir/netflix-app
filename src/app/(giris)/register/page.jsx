@@ -11,15 +11,17 @@ const[kayit,setKayit]=useState({
     email:"",
     password:""
 })
-const{createUser} =useAuthContext()
+
+const{createUser,signUpProvider}=useAuthContext()
 
 const stateDoldur=(e)=>{
  setKayit({ ...kayit, [e.target.name]: e.target.value });
 
 }
 
+const{email,password,firstName,lastName}=kayit
 
-  const handleSubmit = (e) => {
+  const gonder = (e) => {
     const displayName = `${firstName} ${lastName}`;
     e.preventDefault();
 
@@ -31,7 +33,7 @@ const stateDoldur=(e)=>{
       <div className="bg-black w-full h-full lg:bg-opacity-50">
         <div className="flex justify-center">
           <div className="bg-black bg-opacity-70 px-16 py-16 self-center relative top-28 lg:w-2/5 lg:max-w-md rounded-md w-full">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={gonder}>
               <h2 className="text-red-main text-2xl font-[500] text-center tracking-[0.1em] mb-3">
                 Sign Up
               </h2>
@@ -85,6 +87,7 @@ const stateDoldur=(e)=>{
               <button
                 className="flex justify-between text-center items-center btn-danger"
                 type="button"
+                onClick={signUpProvider}
               >
                 Continue with Google
               </button>

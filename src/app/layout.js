@@ -3,6 +3,7 @@ import { ToastContainer } from "react-toastify";
 import "./globals.css";
 import "react-toastify/dist/ReactToastify.css";
 import AuthContextProvider from "@/context/AuthContext";
+import Navbar from "@/components/Navbar";
 
 export const metadata = {
   title: "Netflix",
@@ -13,6 +14,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <AuthContextProvider>
+          <Navbar/>
+
      
       {children}
       <ToastContainer/>
