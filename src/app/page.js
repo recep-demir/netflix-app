@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 
 export default function Home() {
@@ -7,8 +8,9 @@ export default function Home() {
         <div className="relative top-2/4 m-auto text-white text-center">
           <h1 className="text-5xl font-[900] mb-3">Unlimited movies, TV shows, and more</h1>
           <p className="text-2xl font-[400]">Watch anywhere. Cancel anytime.</p>
-
-          <button className="bg-danger w-[250px]">Get Started</button>
+          <Link href="/register">
+          <button className="btn-danger w-[250px]">Get Started</button>
+          </Link>
         </div>
       </div>
     </div>
