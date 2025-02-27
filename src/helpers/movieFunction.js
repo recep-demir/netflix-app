@@ -21,4 +21,3 @@ export const getirMovies=async(type)=>{
 
   return results;
 }
-
