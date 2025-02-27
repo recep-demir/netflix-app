@@ -13,7 +13,7 @@ const MovieCard = ({vote_average, poster_path,id}) => {
     onClick={()=>router.push("/movies/"+id)}
     
     >
-    
+  
     <Image
     width={160}
     height={240}

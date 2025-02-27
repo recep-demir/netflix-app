@@ -1,8 +1,12 @@
 import React from 'react'
+import VideoSection from './VideoSection';
 
 const HeroSection = ({title,id,overview}) => {
   return (
     <div className="relative h-[50vw]">
+
+<VideoSection/>
+
       <div className="absolute top-[30%] ml-4 md:ml-16">
         <p className="text-white text-1xl md:text-5xl h-full w-[50%] lg:text-6xl font-bold drop-shadow-xl">
           {title}

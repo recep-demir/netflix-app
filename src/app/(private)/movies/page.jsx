@@ -12,18 +12,12 @@ const Movies = async () => {
 
   return (
     <div>
-      {/* herosection nowplaying*/}
 
       <HeroSection
         title={movies[0]?.title}
         overview={movies[0]?.overview}
         id={movies[0]?.id}
       />
-
-      {/* moviesection nowplaying */}
-      {/* moviesection  upcoming*/}
-      {/* moviesection top-rated*/}
-      {/* moviesection popular*/}
 
 <MovieSection type="now_playing"/>
 <MovieSection type="popular"/>
