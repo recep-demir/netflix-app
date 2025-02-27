@@ -17,10 +17,6 @@ const Navbar = () => {
 
   const { logOut } = useAuthContext();
 
-  
-
-   
-
   //* with custom hook
   const { currentUser } = useAuthContext();
   // const currentUser = { displayName: "felix franko" };
