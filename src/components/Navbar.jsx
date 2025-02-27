@@ -17,6 +17,10 @@ const Navbar = () => {
 
   const { logOut } = useAuthContext();
 
+  
+
+   
+
   //* with custom hook
   const { currentUser } = useAuthContext();
   // const currentUser = { displayName: "felix franko" };
@@ -26,7 +30,7 @@ const Navbar = () => {
     <>
       <Disclosure as="nav" className="text-white fixed top-0 z-20 w-full">
         <div
-         
+          className={`px-4 md:px-16 py-6 transition duration-500 `}
         >
           <div className="relative flex items-center justify-between">
             <Link href="/">
