@@ -1,6 +1,5 @@
-"use client"
-
-import React, { useEffect, useState } from "react";
+"use client";
+import React from "react";
 import { Fragment } from "react";
 import {
   Disclosure,
@@ -10,17 +9,29 @@ import {
   MenuItems,
   Transition,
 } from "@headlessui/react";
-import { useAuthContext } from "@/context/AuthContext";
 import Link from "next/link";
+import { useAuthContext } from "@/context/AuthContext";
+
 const Navbar = () => {
+ 
+
   const { logOut } = useAuthContext();
+
+  
+
+   
+
   //* with custom hook
   const { currentUser } = useAuthContext();
+  // const currentUser = { displayName: "felix franko" };
+  // const currentUser = false;
 
   return (
     <>
       <Disclosure as="nav" className="text-white fixed top-0 z-20 w-full">
-        <div className={`px-4 md:px-16 py-6 transition duration-500 `}>
+        <div
+         
+        >
           <div className="relative flex items-center justify-between">
             <Link href="/">
               <img src="/images/logo.png" className="h-4 lg:h-7" alt="Logo" />
@@ -56,7 +67,6 @@ const Navbar = () => {
                 >
                   <MenuItems className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                     <MenuItem>
-                      {" "}
                       <Link
                         href="/register"
                         className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100"
@@ -65,7 +75,6 @@ const Navbar = () => {
                       </Link>
                     </MenuItem>
                     <MenuItem>
-                      {" "}
                       <Link
                         href="/login"
                         className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100"
@@ -74,7 +83,6 @@ const Navbar = () => {
                       </Link>
                     </MenuItem>
                     <MenuItem>
-                      {" "}
                       <Link
                         href="/profile"
                         className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100"
@@ -83,7 +91,10 @@ const Navbar = () => {
                       </Link>
                     </MenuItem>
                     <MenuItem>
-                      <span className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 cursor-pointer">
+                      <span
+                        className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 cursor-pointer"
+                        onClick={logOut}
+                      >
                         Logout
                       </span>
                     </MenuItem>
@@ -96,6 +107,6 @@ const Navbar = () => {
       </Disclosure>
     </>
   );
-}
+};
 
-export default Navbar
+export default Navbar;
