@@ -2,7 +2,13 @@ import React from 'react'
 
 const Movies = () => {
   return (
-    <div>Movies</div>
+    <div>
+        {/* herosection nowplaying*/}
+        {/* moviesection nowplaying */}
+        {/* moviesection  upcoming*/}
+        {/* moviesection top-rated*/}
+        {/* moviesection popular*/}
+    </div>
   )
 }
 
