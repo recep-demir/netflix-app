@@ -1,4 +1,4 @@
-import { getirMovieDetail } from '@/helpers/movieFunction';
+import { getirMovieDetail, getirYoutubeKey } from '@/helpers/movieFunction';
 import Link from 'next/link';
 import React from 'react'
 import VideoSection from '../components/VideoSection';
@@ -10,6 +10,7 @@ const MovieDetail = async({params}) => {
     
 
        const detail= await getirMovieDetail(movieId)
+       const videoKey = await getirYoutubeKey(movieId)
 
 console.log(detail);
 
@@ -18,7 +19,7 @@ console.log(detail);
       <h1 className="text-center text-white text-3xl">{detail.title} </h1>
       <p className="text-center text-white text-xl">{detail.tagline} </p>
 
-<VideoSection/>
+<VideoSection videoKey = {videoKey}/>
 
       <div className="flex items-center mt-3 md:mt-4 gap-3">
         <Link
