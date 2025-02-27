@@ -10,20 +10,26 @@ import {
   MenuItems,
   Transition,
 } from "@headlessui/react";
+import { useAuthContext } from "@/context/AuthContext";
+import Link from "next/link";
 const Navbar = () => {
+  const { logOut } = useAuthContext();
+  //* with custom hook
+  const { currentUser } = useAuthContext();
+
   return (
     <>
       <Disclosure as="nav" className="text-white fixed top-0 z-20 w-full">
-        <div
-          className={`px-4 md:px-16 py-6 transition duration-500 `}
-        >
+        <div className={`px-4 md:px-16 py-6 transition duration-500 `}>
           <div className="relative flex items-center justify-between">
-          
+            <Link href="/">
+              <img src="/images/logo.png" className="h-4 lg:h-7" alt="Logo" />
+            </Link>
 
             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            
-                <h5 className="mr-2 capitalize">ipek</h5>
-            
+              {currentUser && (
+                <h5 className="mr-2 capitalize">{currentUser?.displayName}</h5>
+              )}
 
               {/* Profile dropdown */}
               <Menu as="div" className="relative">
@@ -32,7 +38,7 @@ const Navbar = () => {
                     <span className="sr-only">Open user menu</span>
                     <img
                       className="h-8 w-8 rounded-full"
-                      src=""
+                      src={currentUser?.photoURL || "/images/default-slate.png"}
                       alt="user"
                       loading="lazy"
                       referrerPolicy="no-referrer"
@@ -50,19 +56,34 @@ const Navbar = () => {
                 >
                   <MenuItems className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                     <MenuItem>
-                    
-                    </MenuItem>
-                    <MenuItem>
-                     
-                    </MenuItem>
-                    <MenuItem>
-                    
-                    </MenuItem>
-                    <MenuItem>
-                      <span
-                        className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 cursor-pointer"
-                      
+                      {" "}
+                      <Link
+                        href="/register"
+                        className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100"
                       >
+                        Register
+                      </Link>
+                    </MenuItem>
+                    <MenuItem>
+                      {" "}
+                      <Link
+                        href="/login"
+                        className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100"
+                      >
+                        Login
+                      </Link>
+                    </MenuItem>
+                    <MenuItem>
+                      {" "}
+                      <Link
+                        href="/profile"
+                        className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100"
+                      >
+                        Profile
+                      </Link>
+                    </MenuItem>
+                    <MenuItem>
+                      <span className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 cursor-pointer">
                         Logout
                       </span>
                     </MenuItem>
