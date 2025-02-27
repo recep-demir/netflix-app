@@ -1,4 +1,8 @@
 # Netflix App
+[Live Demo](https://netlix-app-e77933.netlify.app/)
+## Screenshots
+
+![App Screenshot](./public/image.png)(./public/imagesc1.png)
 
 
 ## Overview
