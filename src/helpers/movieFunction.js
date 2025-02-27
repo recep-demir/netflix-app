@@ -32,3 +32,16 @@ export const getirMovieDetail = async (movieId) => {
 
   return data;
 };
+
+export const getirYoutubeKey = async (movieId) => {
+  const res = await fetch(
+    `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${API_KEY}`
+  );
+  if (!res.ok) {
+    throw new Error("fetch işleminde hata var");
+  }
+
+  const  {results}  = await res.json();
+
+  return results[0]?.key;
+};
