@@ -1,5 +1,6 @@
 "use client"
 
+import GoogleIcon from "@/assets/icons/GoogleIcon";
 import { useAuthContext } from "@/context/AuthContext";
 import { useState } from "react";
 
@@ -89,7 +90,7 @@ const{email,password,firstName,lastName}=kayit
                 type="button"
                 onClick={signUpProvider}
               >
-                Continue with Google
+                Continue with Google <GoogleIcon color= "currentColor"/>
               </button>
             </form>
           </div>
