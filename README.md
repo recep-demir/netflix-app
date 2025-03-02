@@ -3,7 +3,7 @@
 ## Screenshots
 
 ![App Screenshot](./public/images/imagesc1.png)
-![](./public/images/imagesc1.png) 
+![](./public/images/image.png) 
  
 
 
@@ -71,5 +71,5 @@ npm run start
 This project is licensed under the MIT License.
 
 ## Author
-[Your Name] - [Your GitHub Profile]
+[Recep Demir](https://github.com/recep-demir)
 
